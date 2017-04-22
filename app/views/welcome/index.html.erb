@@ -1,44 +1,66 @@
-  <div class="jumbotron">
-    <h1 class="title">Slim China</h1>
-    <p class="slogan">Slim China 是你这辈子参加的最后一个“减肥”社群!
-    <br>
-    史上最健康的减肥社群！
-    <br>
-    你将在这里体验到从未有过的美丽的美丽和自信！
-    <br>
-    打破从开始到放弃的死循环，让你真正感受作为一个瘦子的自由！
-    </p>
-    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上加入</a></p>
-  </div>
+  <div class="col-md-12">
+     <div class="row box">
+       <div class="box-inner col-md-6 col-md-offset-3">
+         <h1 class="title">Slim China</h1>
+         <p class="slogan">这将是你这辈子参加的最后一个“减肥”社群!
+           <br>
+               这是史上最健康的减肥社群！
+           <br>
+           你将在这里收获美丽和自信！
+           <br>
+           打破从开始到放弃的循环，你会成为瘦子！
+         </p>
+         <p class="lead">
+           <%= link_to '马上加入', jobs_path, class: 'btn btn-danger' %>
+         </p>
+       </div>
+     </div>
+   </div>
 
-
-  <section id="company">
-  <div class = "container-fluid">
-    <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-          <div class="caption">
-            <h3>科学的方法带你飞</h3>
-          </div>
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h2 class="section-heading">科学的方法带你飞</h2>
+          <p class="lead">什么是减肥的正确方法？</p>
         </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-          <div class="caption">
-            <h3>变美丽的三大法宝</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-          <div class="caption">
-            <h3>做兼职交朋友</h3>
-          </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <%= image_tag 'pic-1.jpg', class: 'img-responsive' %>
         </div>
       </div>
     </div>
   </div>
-</section>
+
+  <div class="content-section-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h2 class="section-heading">变美丽的三大法宝</h2>
+          <p class="lead">如何通过食物，运动，漂亮的衣服助自己变成美丽的瘦子？ </p>
+        </div>
+        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+          <%= image_tag 'pic-2.jpg', class: 'img-responsive' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h2 class="section-heading">做兼职交朋友</h2>
+          <p class="lead">想要学会如何做出健康而低脂的晚餐，快来加入我们吧！</p>
+        </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
+        </div>
+      </div>
+    </div>
+  </div>
