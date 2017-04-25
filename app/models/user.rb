@@ -6,5 +6,8 @@ class User < ApplicationRecord
 def admin?
  is_admin
 end
+has_many :jobs
+has_many :job_relationships
+has_many :participated_jobs, :through => :job_relationships, :source => :job
 has_many :resumes
 end
