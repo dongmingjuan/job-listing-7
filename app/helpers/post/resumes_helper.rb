@@ -1,0 +1,2 @@
+module Post::ResumesHelper
+end

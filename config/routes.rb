@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   namespace :post do
-    resouces :resumes
+    resources :resumes
   end
 
   namespace :admin do
