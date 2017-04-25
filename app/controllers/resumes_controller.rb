@@ -40,7 +40,7 @@ class ResumesController < ApplicationController
 
     @resume.destroy
     flash[:alert] = "Post 已删除"
-    redirect_to post_resumes_path
+    redirect_to root_path
  end
 
 
