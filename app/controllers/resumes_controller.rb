@@ -17,6 +17,11 @@ class ResumesController < ApplicationController
       render :new
     end
   end
+  def show
+    @job = Job.find(params[:job_id])
+    @resume = Resume.find(params[:id]
+    @comments = @job.resume.comments
+  end
 
 
 
