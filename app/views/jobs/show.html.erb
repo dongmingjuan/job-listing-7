@@ -16,6 +16,7 @@
     <thead>
      <tr>
         <th>文章内容</th>
+        <th>图片</th>
         <th>发表者</th>
         <th>发表时间</th>
       </tr>
@@ -24,6 +25,7 @@
       <% @resumes.each do |resume| %>
         <tr>
           <td><%= resume.content %></td>
+          <td><%= link_to("See the Image", resume.attachment_url)%></td>
           <td><%= resume.user.email %></td>
           <td><%= resume.created_at %></td>
         </tr>
