@@ -37,10 +37,11 @@ class ResumesController < ApplicationController
 
   def destroy
     @job = Job.find(params[:job_id])
+    @resume = Resume.find(params[:id])
 
     @resume.destroy
     flash[:alert] = "Post 已删除"
-    redirect_to root_path
+    redirect_to post_resumes_path
  end
 
 
