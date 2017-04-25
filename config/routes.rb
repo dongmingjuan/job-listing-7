@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-     resources :jobs
-     resources :resumes
+     resources :jobs do
+       resources :resumes
+     end
+  end
+
+  namespace :post do
+    resouces :resumes
   end
 
   namespace :admin do
