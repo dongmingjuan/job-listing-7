@@ -19,9 +19,11 @@
           <td><%= groupone.description %></td>
           <td> <%= groupone.user.email %> </td>
           <td>
+            <% if current_user && current_user == groupone.user %>
               <%= link_to("Edit", edit_groupone_path(groupone), class: "btn btn-xs btn-default")%>
               <%= link_to("Delete", groupone_path(groupone),    class: "btn btn-xs btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+            <% end %>
           </td>
         </tr>
       <% end %>
