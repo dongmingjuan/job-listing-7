@@ -1,26 +1,6 @@
-<table class="table table-boldered">
-  <thead>
-    <tr>
-      <td>社群分享</td>
-      <td>文章数量</td>
-      <td>更新时间</td>
-    </tr>
-  </thead>
-  
-
-  <tbody>
-   <% @jobs.each do |job| %>
-     <tr>
-       <td>
-         <%= link_to(job.title, job_path(job)) %>
-       </td>
-       <td>
-         <%= job.resumes.count %>
-       </td>
-       <td>
-         <%= job.updated_at %>
-       </td>
-    </tr>
-  <% end %>
- <tbody>
-</table>
+<div class="panel panel-default">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+    Panel content
+  </div>
+<!--  -->
