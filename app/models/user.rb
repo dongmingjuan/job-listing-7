@@ -15,6 +15,10 @@ has_many :resumes
  has_many :groupones
  has_many :grouptwos
 
+ has_many :essays
+ has_many :essayones
+ has_many :essaytwos
+
 def is_member_of?(job)
   participated_jobs.include?(job)
 end
