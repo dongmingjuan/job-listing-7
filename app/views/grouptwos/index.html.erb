@@ -8,6 +8,7 @@
         <td>#</td>
         <td>Title</td>
         <td>Description</td>
+        <td>Creator </td>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
           <td>#</td>
           <td><%= link_to(grouptwo.title, grouptwo_path(grouptwo)) %></td>
           <td><%= grouptwo.description %></td>
+          <td> <%= grouptwo.user.email %> </td>
           <td>
               <%= link_to("Edit", edit_grouptwo_path(grouptwo), class: "btn btn-xs btn-default")%>
               <%= link_to("Delete", grouptwo_path(grouptwo),    class: "btn btn-xs btn-default",
