@@ -18,7 +18,7 @@
  @import "bootstrap";
  @import "font-awesome";
 
- //---------Navbar---------
+
  html {
     position: relative;
     min-height: 100%;
@@ -28,11 +28,10 @@
     /* Margin bottom by footer height */
     margin-bottom: 100px;
   }
-
+//---------Navbar---------
   .navbar-default {
       background-color: #212121;
       border-color: #212121;
-      margin-bottom: 0;
       border-radius: 0;
   }
 
@@ -71,6 +70,7 @@
       background-color: #FFE0B2;
       color: #212121;
   }
+  
 
 
 
@@ -183,6 +183,7 @@
      background-repeat: no-repeat;
      background-size: cover;
      margin-bottom: 50px;
+     margin-top: -20px;
 
 
      .box-inner {
@@ -298,4 +299,16 @@
       margin-top: 30px;
     }
    }
-   
+
+   //---------Common---------
+
+   .col-centered {
+     float: none;
+     margin: 0 auto;
+   }
+
+//---------按钮背景颜色调整---------
+   nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+     color: #fff;
+     background-color: #4CAF50;
+ }
