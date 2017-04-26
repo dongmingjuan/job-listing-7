@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   resources :pages
   resources :groups
   resources :groupones
+  resources :grouptwos
 end
