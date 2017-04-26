@@ -1,4 +1,6 @@
 class GrouponesController < ApplicationController
+  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_permission, only: [:edit, :update, :destroy]
   def index
     @groupones = Groupone.all
   end
@@ -44,6 +46,12 @@ end
 
 
  private
+
+ def check_permission
+   if current_user != @groupone.user
+     redirect_to groupones_path, alert: "You have no permission."
+   end
+ end
 
  def groupone_params
    params.require(:groupone).permit(:title, :description)
