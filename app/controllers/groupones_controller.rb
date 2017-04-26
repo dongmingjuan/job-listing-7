@@ -9,6 +9,7 @@ class GrouponesController < ApplicationController
 
 def create
    @groupone = Groupone.new(groupone_params)
+   @groupone.user = current_user
    if @groupone.save
      redirect_to groupones_path
    else

@@ -11,6 +11,10 @@ has_many :job_relationships
 has_many :participated_jobs, :through => :job_relationships, :source => :job
 has_many :resumes
 
+ has_many :groups
+ has_many :groupones
+ has_many :grouptwos
+
 def is_member_of?(job)
   participated_jobs.include?(job)
 end
