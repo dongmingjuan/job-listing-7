@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :join, :quit]
-  layout "front"
+  
   def index
     @jobs = case params[:order]
     when 'by_lower_bound'
