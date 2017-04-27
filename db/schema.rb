@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426235141) do
+ActiveRecord::Schema.define(version: 20170427003605) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "job_id"
@@ -45,6 +45,20 @@ ActiveRecord::Schema.define(version: 20170426235141) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "group_relationships", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groupone_relationships", force: :cascade do |t|
+    t.string   "groupone_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "groupones", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -59,6 +73,13 @@ ActiveRecord::Schema.define(version: 20170426235141) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+  end
+
+  create_table "grouptwo_relationships", force: :cascade do |t|
+    t.string   "grouptwo_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "grouptwos", force: :cascade do |t|

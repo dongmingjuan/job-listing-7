@@ -19,6 +19,16 @@ has_many :resumes
  has_many :essayones
  has_many :essaytwos
 
+ has_many :group_relationships
+ has_many :participated_groups, :through => :group_relationships, :source => :group
+
+ has_many :groupone_relationships
+ has_many :participated_groupones, :through => :groupone_relationships, :source => :groupone
+
+ has_many :grouptwo_relationships
+ has_many :participated_grouptwos, :through => :grouptwo_relationships, :source => :grouptwo
+
+
 def is_member_of?(job)
   participated_jobs.include?(job)
 end
