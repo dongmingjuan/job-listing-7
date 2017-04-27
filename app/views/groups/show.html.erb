@@ -1,10 +1,29 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Write a Post", new_group_essay_path(@group), class: "btn btn-default pull-right")%>
+    <%= link_to("Write a essay", new_group_essay_path(@group), class: "btn btn-default pull-right")%>
     <% if current_user && current_user == @group.user %>
       <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
     <% end %>
   </div>
   <h2><%= @group.title %></h2>
   <p><%= @group.description %></p>
+    <table class="table">
+    <thead>
+     <tr>
+        <th>文章内容</th>
+        <th>发表者</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @essays.each do |essay| %>
+        <tr>
+          <td><%= essay.content %></td>
+          <td><%= essay.user.email %></td>
+          <td><%= essay.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

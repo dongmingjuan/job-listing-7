@@ -21,6 +21,7 @@ class GrouptwosController < ApplicationController
 
    def show
      @grouptwo = Grouptwo.find(params[:id])
+     @essaytwos = @grouptwo.essaytwos
    end
 
     def edit

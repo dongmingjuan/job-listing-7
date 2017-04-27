@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <%= link_to("Write a Post", new_grouptwo_essaytwo_path(@grouptwo), class: "btn btn-default pull-right")%>
+  <%= link_to("Write a essaytwo", new_grouptwo_essaytwo_path(@grouptwo), class: "btn btn-default pull-right")%>
   <div class="grouptwo">
     <% if current_user && current_user == @grouptwo.user %>
       <%= link_to("Edit", edit_grouptwo_path(@grouptwo), class: "btn btn-primary pull-right")%>
@@ -7,4 +7,23 @@
   </div>
   <h2><%= @grouptwo.title %></h2>
   <p><%= @grouptwo.description %></p>
+    <table class="table">
+    <thead>
+     <tr>
+        <th>文章内容</th>
+        <th>发表者</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @essaytwos.each do |essaytwo| %>
+        <tr>
+          <td><%= essaytwo.content %></td>
+          <td><%= essaytwo.user.email %></td>
+          <td><%= essaytwo.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

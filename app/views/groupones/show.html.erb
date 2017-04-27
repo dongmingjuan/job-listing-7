@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <%= link_to("Write a Post", new_groupone_essayone_path(@groupone), class: "btn btn-default pull-right")%>
+  <%= link_to("Write a essayone", new_groupone_essayone_path(@groupone), class: "btn btn-default pull-right")%>
   <div class="groupone">
     <% if current_user && current_user == groupone.user %>
       <%= link_to("Edit", edit_groupone_path(@groupone), class: "btn btn-primary pull-right")%>
@@ -7,4 +7,23 @@
   </div>
   <h2><%= @groupone.title %></h2>
   <p><%= @groupone.description %></p>
+    <table class="table">
+    <thead>
+     <tr>
+        <th>文章内容</th>
+        <th>发表者</th>
+        <th>发表时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @essayones.each do |essayone| %>
+        <tr>
+          <td><%= essayone.content %></td>
+          <td><%= essayone.user.email %></td>
+          <td><%= essayone.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

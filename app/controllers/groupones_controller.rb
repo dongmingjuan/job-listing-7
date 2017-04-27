@@ -21,6 +21,7 @@ def create
 
  def show
    @groupone = Groupone.find(params[:id])
+   @essayones = @groupone.essayones
  end
 
   def edit

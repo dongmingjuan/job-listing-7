@@ -21,6 +21,7 @@ def create
 
  def show
    @group = Group.find(params[:id])
+   @essays = @group.essays
  end
 
   def edit
