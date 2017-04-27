@@ -12,7 +12,8 @@
         <table class="table table-boldered">
           <thead>
             <tr>
-              <td>社群分享</td>
+              <td>活动信息</td>
+              <td>内容描述</td>
               <td>文章数量</td>
               <td>更新时间</td>
             </tr>
@@ -22,6 +23,9 @@
              <tr>
                <td>
                  <%= link_to(job.title, job_path(job)) %>
+               </td>
+               <td>
+                  <%= job.description %>
                </td>
                <td>
                  <%= job.resumes.count %>
