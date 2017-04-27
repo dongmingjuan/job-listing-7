@@ -21,7 +21,7 @@ class GrouptwosController < ApplicationController
 
    def show
      @grouptwo = Grouptwo.find(params[:id])
-     @essaytwos = @grouptwo.essaytwos
+     @essaytwos = @grouptwo.essaytwos.order("created_at DESC")
    end
 
     def edit

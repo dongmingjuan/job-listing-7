@@ -21,7 +21,7 @@ def create
 
  def show
    @group = Group.find(params[:id])
-   @essays = @group.essays
+   @essays = @group.essays.order("created_at DESC")
  end
 
   def edit

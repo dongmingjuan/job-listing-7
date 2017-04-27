@@ -21,7 +21,7 @@ def create
 
  def show
    @groupone = Groupone.find(params[:id])
-   @essayones = @groupone.essayones
+   @essayones = @groupone.essayones.order("created_at DESC")
  end
 
   def edit

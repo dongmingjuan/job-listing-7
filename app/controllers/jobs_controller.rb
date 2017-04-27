@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :join, :quit]
-  
+
   def index
     @jobs = case params[:order]
     when 'by_lower_bound'
@@ -26,7 +26,7 @@ class JobsController < ApplicationController
   end
   def show
     @job = Job.find(params[:id])
-    @resumes = @job.resumes
+    @resumes = @job.resumes.order("created_at DESC")
 
     if @job.is_hidden
       flash[:warning] = "This job already archived"
