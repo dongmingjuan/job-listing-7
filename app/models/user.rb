@@ -28,7 +28,6 @@ has_many :resumes
  has_many :grouptwo_relationships
  has_many :participated_grouptwos, :through => :grouptwo_relationships, :source => :grouptwo
 
-
 def is_member_of?(job)
   participated_jobs.include?(job)
 end
@@ -39,5 +38,17 @@ end
 
 def quit!(job)
   participated_jobs.delete(job)
+end
+
+def is_member_of?(group)
+  participated_groups.include?(group)
+end
+
+def is_member_of?(groupone)
+  participated_groupones.include?(groupone)
+end
+
+def is_member_of?(grouptwo)
+  participated_grouptwos.include?(grouptwo)
 end
 end
