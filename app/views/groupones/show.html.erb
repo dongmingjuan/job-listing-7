@@ -2,8 +2,10 @@
   <span class="pull-right">
     <% if current_user && current_user.is_member_of?(@groupone) %>
       <label class="label label-success"> 群组成员 </label>
+       <%= link_to("Quit Group", quit_groupone_path(@groupone), method: :post, class: "btn btn-default") %>
     <% else %>
       <label class="label label-warning"> 不是群组成员 </label>
+      <%= link_to("Join Group", join_groupone_path(@groupone), method: :post, class: "btn btn-default") %>
     <% end %>
   </span>
   <%= link_to("Write a essayone", new_groupone_essayone_path(@groupone), class: "btn btn-default pull-right")%>

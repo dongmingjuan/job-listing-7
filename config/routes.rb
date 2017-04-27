@@ -30,13 +30,28 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :pages
+
   resources :groups do
+    member do
+      post :join
+      post :quit
+    end
     resources :essays
   end
+
   resources :groupones do
+    member do
+      post :join
+      post :quit
+    end
     resources :essayones
   end
+
   resources :grouptwos do
+    member do
+      post :join
+      post :quit
+    end
     resources :essaytwos
   end
 end
