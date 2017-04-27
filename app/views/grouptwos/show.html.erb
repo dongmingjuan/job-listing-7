@@ -1,8 +1,9 @@
 <div class="col-md-12">
+  <%= link_to("Write a Post", new_grouptwo_essaytwo_path(@grouptwo), class: "btn btn-default pull-right")%>
   <div class="grouptwo">
-    <% if current_user && current_user == grouptwo.user %>
+    <% if current_user && current_user == @grouptwo.user %>
       <%= link_to("Edit", edit_grouptwo_path(@grouptwo), class: "btn btn-primary pull-right")%>
-    <% end %> 
+    <% end %>
   </div>
   <h2><%= @grouptwo.title %></h2>
   <p><%= @grouptwo.description %></p>

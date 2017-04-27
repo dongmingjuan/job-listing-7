@@ -1,4 +1,5 @@
 <div class="col-md-12">
+  <%= link_to("Write a Post", new_groupone_essayone_path(@groupone), class: "btn btn-default pull-right")%>
   <div class="groupone">
     <% if current_user && current_user == groupone.user %>
       <%= link_to("Edit", edit_groupone_path(@groupone), class: "btn btn-primary pull-right")%>
