@@ -1,6 +1,6 @@
 class GrouptwosController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy, :join, :quit]
-  before_action :check_permission, only: [:edit, :update, :destroy]
+  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+  # before_action :check_permission, only: [:edit, :update, :destroy]
     def index
       @grouptwos = Grouptwo.all
     end
@@ -76,11 +76,11 @@ class GrouptwosController < ApplicationController
 
    private
 
-   def check_permission
-     if current_user != @grouptwo.user
-       redirect_to groupones_path, alert: "You have no permission."
-     end
-   end
+  #  def check_permission
+  #    if current_user != @grouptwo.user
+  #      redirect_to groupones_path, alert: "You have no permission."
+  #    end
+  #  end
 
    def grouptwo_params
      params.require(:grouptwo).permit(:title, :description)
