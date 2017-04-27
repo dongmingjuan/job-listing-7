@@ -21,7 +21,7 @@ class GrouptwosController < ApplicationController
 
    def show
      @grouptwo = Grouptwo.find(params[:id])
-     @essaytwos = @grouptwo.essaytwos.order("created_at DESC")
+     @essaytwos = @grouptwo.essaytwos.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
    end
 
     def edit

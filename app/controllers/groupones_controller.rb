@@ -21,7 +21,7 @@ def create
 
  def show
    @groupone = Groupone.find(params[:id])
-   @essayones = @groupone.essayones.order("created_at DESC")
+   @essayones = @groupone.essayones.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
  end
 
   def edit

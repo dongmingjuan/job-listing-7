@@ -21,7 +21,7 @@ def create
 
  def show
    @group = Group.find(params[:id])
-   @essays = @group.essays.order("created_at DESC")
+   @essays = @group.essays.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
  end
 
   def edit
