@@ -13,7 +13,7 @@ def create
    @groupone = Groupone.new(groupone_params)
    @groupone.user = current_user
    if @groupone.save
-     current_user.join!(@groupone)
+    #  current_user.join!(@groupone)
      redirect_to groupones_path
    else
      render :new
@@ -46,31 +46,31 @@ def create
   redirect_to groupones_path
 end
 
-def join
- @groupone = Groupone.find(params[:id])
-
-  if !current_user.is_member_of?(@groupone)
-    current_user.join!(@groupone)
-    flash[:notice] = "加入本讨论版成功！"
-  else
-    flash[:warning] = "你已经是本讨论版成员了！"
-  end
-
-  redirect_to groupone_path(@groupone)
-end
-
-def quit
-  @groupone = Groupone.find(params[:id])
-
-  if current_user.is_member_of?(@groupone)
-    current_user.quit!(@groupone)
-    flash[:alert] = "已退出本讨论版！"
-  else
-    flash[:warning] = "你不是本讨论版成员，怎么退出 XD"
-  end
-
-  redirect_to groupone_path(@groupone)
-end
+# def join
+#  @groupone = Groupone.find(params[:id])
+#
+#   if !current_user.is_member_of?(@groupone)
+#     current_user.join!(@groupone)
+#     flash[:notice] = "加入本讨论版成功！"
+#   else
+#     flash[:warning] = "你已经是本讨论版成员了！"
+#   end
+#
+#   redirect_to groupone_path(@groupone)
+# end
+#
+# def quit
+#   @groupone = Groupone.find(params[:id])
+#
+#   if current_user.is_member_of?(@groupone)
+#     current_user.quit!(@groupone)
+#     flash[:alert] = "已退出本讨论版！"
+#   else
+#     flash[:warning] = "你不是本讨论版成员，怎么退出 XD"
+#   end
+#
+#   redirect_to groupone_path(@groupone)
+# end
 
 
 

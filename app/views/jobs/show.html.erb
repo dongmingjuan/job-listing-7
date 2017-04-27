@@ -1,4 +1,4 @@
-<span class="pull-right">
+<!-- <span class="pull-right">
   <% if current_user && current_user.is_member_of?(@job) %>
     <label class="label label-success"> 群组成员 </label>
     <%= link_to("Quit Group", quit_job_path(@job), method: :post, class: "btn btn-default")%>
@@ -6,7 +6,7 @@
     <label class="label label-warning"> 不是群组成员 </label>
     <%= link_to("Join Group", join_job_path(@job), method: :post, class: "btn btn-default")%>
   <% end %>
-</span>
+</span> -->
 
 <div class="pull-right">
   <% if current_user && current_user.is_member_of?(@job) %>

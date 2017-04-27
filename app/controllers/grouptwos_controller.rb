@@ -13,7 +13,7 @@ class GrouptwosController < ApplicationController
      @grouptwo = Grouptwo.new(grouptwo_params)
      @grouptwo.user = current_user
      if @grouptwo.save
-        current_user.join!(@grouptwo)
+        # current_user.join!(@grouptwo)
        redirect_to grouptwos_path
      else
        render :new
@@ -46,31 +46,31 @@ class GrouptwosController < ApplicationController
     redirect_to grouptwos_path
   end
 
-  def join
-   @grouptwo = Grouptwo.find(params[:id])
-
-    if !current_user.is_member_of?(@grouptwo)
-      current_user.join!(@grouptwo)
-      flash[:notice] = "加入本讨论版成功！"
-    else
-      flash[:warning] = "你已经是本讨论版成员了！"
-    end
-
-    redirect_to grouptwo_path(@grouptwo)
-  end
-
-  def quit
-    @grouptwo = Grouptwo.find(params[:id])
-
-    if current_user.is_member_of?(@grouptwo)
-      current_user.quit!(@grouptwo)
-      flash[:alert] = "已退出本讨论版！"
-    else
-      flash[:warning] = "你不是本讨论版成员，怎么退出 XD"
-    end
-
-    redirect_to grouptwo_path(@grouptwo)
-  end
+  # def join
+  #  @grouptwo = Grouptwo.find(params[:id])
+  #
+  #   if !current_user.is_member_of?(@grouptwo)
+  #     current_user.join!(@grouptwo)
+  #     flash[:notice] = "加入本讨论版成功！"
+  #   else
+  #     flash[:warning] = "你已经是本讨论版成员了！"
+  #   end
+  #
+  #   redirect_to grouptwo_path(@grouptwo)
+  # end
+  #
+  # def quit
+  #   @grouptwo = Grouptwo.find(params[:id])
+  #
+  #   if current_user.is_member_of?(@grouptwo)
+  #     current_user.quit!(@grouptwo)
+  #     flash[:alert] = "已退出本讨论版！"
+  #   else
+  #     flash[:warning] = "你不是本讨论版成员，怎么退出 XD"
+  #   end
+  #
+  #   redirect_to grouptwo_path(@grouptwo)
+  # end
 
 
 

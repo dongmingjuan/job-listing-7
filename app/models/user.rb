@@ -8,21 +8,21 @@ def admin?
 end
 
 has_many :jobs
-has_many :job_relationships
-has_many :participated_jobs, :through => :job_relationships, :source => :job
+# has_many :job_relationships
+# has_many :participated_jobs, :through => :job_relationships, :source => :job
 has_many :resumes
-def is_member_of?(job)
-  participated_jobs.include?(job)
-end
-def join!(job)
-  participated_jobs << job
-end
-def quit!(job)
-  participated_jobs.delete(job)
-end
+# def is_member_of?(job)
+#   participated_jobs.include?(job)
+# end
+# def join!(job)
+#   participated_jobs << job
+# end
+# def quit!(job)
+#   participated_jobs.delete(job)
+# endw
 
-#  has_many :groups
-#  has_many :essays
+ has_many :groups
+ has_many :essays
 #  has_many :group_relationships
 #  has_many :participated_groups, :through => :group_relationships, :source => :group
 #  def is_member_of?(group)
@@ -36,8 +36,8 @@ end
 #  end
 #
 #
-#  has_many :groupones
-#  has_many :essayones
+ has_many :groupones
+ has_many :essayones
 #  has_many :groupone_relationships
 #  has_many :participated_groupones, :through => :groupone_relationships, :source => :groupone
 #  has_many :grouptwos
@@ -52,7 +52,8 @@ end
 #  end
 #
 #
-#  has_many :essaytwos
+ has_many :grouptwos
+ has_many :essaytwos
 #  has_many :grouptwo_relationships
 #  has_many :participated_grouptwos, :through => :grouptwo_relationships, :source => :grouptwo
 # def is_member_of?(grouptwo)
