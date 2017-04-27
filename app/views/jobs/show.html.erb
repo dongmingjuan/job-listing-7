@@ -1,7 +1,5 @@
 <div class="pull-right">
-  <% if current_user && current_user.is_member_of?(@job) %>
    <%= link_to("Write a post", new_job_resume_path(@job), class: "btn btn-default ") %>
-  <% end %>
 </div>
 
 
@@ -14,12 +12,6 @@
   <div class="text-center">
     <%= will_paginate @resumes %>
   </div>
-
-
-
-
-
-
   <table class="table">
     <thead>
      <tr>
