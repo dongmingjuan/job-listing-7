@@ -22,7 +22,7 @@
             <tbody>
               <% @resumes.each do |resume| %>
                 <tr>
-                  <td><%= resume.content %></td>
+                  <td><%= simple_format（resume.content ）%></td>
                   <td><%= link_to("See the Image", resume.attachment_url)%></td>
                   <td><%= resume.user.email %></td>
                   <td><%= resume.created_at %></td>
