@@ -1,0 +1,2 @@
+class Postone < ApplicationRecord
+end
