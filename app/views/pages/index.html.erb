@@ -1,11 +1,21 @@
-<div class="content-section-b">
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p.pol {
+    background-color: yellow
+  }
+  </style>
+</head>
+<body>
+<div class="pol">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">健康饮食活动区</h2>
-        <p class="slogan">快来加入我们，让自己从此获得健康的身体!
+        <p class="pol">快来加入我们，让自己从此获得健康的身体!
           <br>
             健康饮食打卡活动，记录并分享自己的饮食习惯！
           <br>
@@ -13,9 +23,9 @@
           <br>
             从此爱上那些会让自己身体越来越健康的食物！
         </p>
-        <p class="lead">
+        <p >
           <br>
-          <%= link_to '马上加入', jobs_path, class: 'btn btn-danger' %>
+          <%= link_to '马上加入', jobs_path, class: "btn btn-danger", style: "background-color:blue;"%>
         </p>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
@@ -109,3 +119,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>
