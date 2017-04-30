@@ -1,2 +1,0 @@
-class Postone < ApplicationRecord
-end

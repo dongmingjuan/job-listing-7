@@ -49,27 +49,27 @@ class JobsController < ApplicationController
     @job.destroy
     redirect_to jobs_path
   end
-  # def join
-  #   @job = Job.find(params[:id])
-  #
-  #   if !current_user.is_member_of?(@job)
-  #     current_user.join!(@job)
-  #     flash[:notice] = "加入本讨论版成功!"
-  #   end
-  #
-  #   redirect_to job_path(@job)
-  # end
-  #
-  # def quit
-  #   @job = Job.find(params[:id])
-  #
-  #   if current_user.is_member_of?(@job)
-  #     current_user.quit!(@job)
-  #     flash[:alert] ="已退出本讨论版"
-  #   end
-  #
-  #   redirect_to job_path(@job)
-  # end
+  def join
+    @job = Job.find(params[:id])
+
+    if !current_user.is_member_of?(@job)
+      current_user.join!(@job)
+      flash[:notice] = "加入本讨论版成功!"
+    end
+
+    redirect_to job_path(@job)
+  end
+
+  def quit
+    @job = Job.find(params[:id])
+
+    if current_user.is_member_of?(@job)
+      current_user.quit!(@job)
+      flash[:alert] ="已退出本讨论版"
+    end
+
+    redirect_to job_path(@job)
+  end
   private
   def job_params
     params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :description, :is_hidden)
