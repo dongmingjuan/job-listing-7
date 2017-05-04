@@ -10,10 +10,10 @@
 #  updated_at :datetime         not null
 #  attachment :string
 #
-
 class Resume < ApplicationRecord
   belongs_to :user
   belongs_to :job
   mount_uploader :attachment, AttachmentUploader
   validates :content, presence: true
+  mount_uploader :image, ImageUploader
 end

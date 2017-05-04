@@ -22,8 +22,17 @@
             <tbody>
               <% @resumes.each do |resume| %>
                 <tr>
-                  <td><%= simple_format（resume.content ）%></td>
-                  <td><%= link_to("See the Image", resume.attachment_url)%></td>
+                  <td><%= resume.content %></td>
+                  <!-- <td><%= link_to("See the Image", resume.attachment_url)%></td> -->
+                  <td>
+                      <%= link_to job_resume_path(@job) do %>
+                        <% if resume.image.present? %>
+                          <%= image_tag(resume.image.thumb.url, class: "thumbnail") %>
+                        <% else %>
+                          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <% end %>
+                      <% end %>
+                  </td>
                   <td><%= resume.user.email %></td>
                   <td><%= resume.created_at %></td>
                 </tr>
@@ -41,3 +50,5 @@
   <div class="text-center">
     <%= link_to("Back", jobs_path) %>
   </div>
+
+  

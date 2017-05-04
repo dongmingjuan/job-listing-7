@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427003605) do
-
-  create_table "comments", force: :cascade do |t|
-    t.integer  "job_id"
-    t.integer  "resume_id"
-    t.integer  "user_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170504021855) do
 
   create_table "essayones", force: :cascade do |t|
     t.text     "content"
@@ -106,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170427003605) do
     t.integer  "wage_upper_bound"
     t.string   "contact_email"
     t.boolean  "is_hidden",        default: true
+    t.string   "image"
   end
 
   create_table "resumes", force: :cascade do |t|
@@ -115,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170427003605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "attachment"
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|

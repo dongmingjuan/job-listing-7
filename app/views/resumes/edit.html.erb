@@ -5,5 +5,12 @@
 <%= simple_form_for [@job, @resume] do |f| %>
   <%= f.input :content %>
   <%= f.input :attachment %>
+
+  <% if @resume.image.present? %>
+     <span>目前商品图</span> <br>
+     <%= image_tag(@resume.image.thumb.url) %>
+  <% end %>
+
+  <%= f.input :image, as: :file %>
   <%= f.submit "送出" %>
 <% end %>
